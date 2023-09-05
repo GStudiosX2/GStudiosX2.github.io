@@ -1,6 +1,13 @@
 <html>
   <head>
     <title>SVG</title>
+
+    <!--  Essential META Tags -->
+    <meta property="og:title" content="">
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="" id="img2">
+    <meta property="og:url" content="" id="img2">
+    <meta name="twitter:card" content="summary_large_image">
   </head>
   <body>
     <style>
@@ -13,6 +20,9 @@
     
     <script>
       document.getElementById("img").src = "https://gstudiosx2.github.io/assets" + window.location.search.replace('?', '');
+      document.querySelectorAll("#img2").forEach((item) => {
+        item.content = "https://gstudiosx2.github.io/assets" + window.location.search.replace('?', '');
+      }); 
     </script>
   </body>
 </html>
