@@ -10,23 +10,27 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div class="text-center flex flex-col justify-center items-center h-screen bg-zinc-950 text-white gap-4 p-4">
+    <div class="text-center flex flex-col md:justify-center items-center h-[100dvh] h-screen bg-zinc-950 text-white gap-4 py-6 px-4 overflow-y-auto">
       <span class="text-2xl font-bold p-2.5 pt-0">GStudiosX</span>
       <span class="text-2xl font-bold p-2.5 pt-0">My Public Projects!
       <span class="text-sm">(Not In Any Order)</span></span>
 
-      <div class="flex flex-wrap gap-2 w-full md:w-1/2">
-        <a class="p-3 bg-zinc-700 hover:bg-zinc-900 flex flex-col justify-start w-60 text-start" href="https://gstudiosx2.github.io/MHDailyLimitChecker/">
+      <div class="flex flex-wrap justify-center gap-2 w-full md:w-1/2">
+        <a class="p-3 bg-zinc-700 hover:bg-zinc-900 flex flex-col justify-start w-full md:w-60 text-start max-h-[15rem]" href="https://gstudiosx2.github.io/MHDailyLimitChecker/">
           <span class="text-xl font-bold">MHDailyLimitChecker</span>
-          MHDailyLimitChecker is a tool that lets you check how much time you can play on your Minehut server,
-          since Minehut recently-ish added a new daily time limit to their free servers.
+          <span class="flex flex-row md:flex-col">
+            MHDailyLimitChecker is a tool that lets you check how much time you can play on your Minehut server,
+            since Minehut recently-ish added a new daily time limit to their free servers.
+          </span>
         </a>
 
-        <a class="p-3 bg-zinc-700 hover:bg-zinc-900 flex flex-col justify-start w-60 text-start" href="https://skript.lol">
+        <a class="p-3 bg-zinc-700 hover:bg-zinc-900 flex flex-col justify-start w-full md:w-60 text-start max-h-[15rem] overflow-y-hidden" href="https://skript.lol">
           <span class="text-xl font-bold">Skript.lol</span>
-          Skript.lol - Skript Documentation
-          The best website for modern Skript development.
-          <img src="/LogoV2.png" class="w-full h-15 aspect-square" />
+          <span class="flex flex-row md:flex-col">
+            Skript.lol - Skript Documentation
+            The best website for modern Skript development.
+            <img src="/LogoV2.png" class="md:w-full md:aspect-video md:max-h-[90px] w-[90px]" />
+          </span>
         </a>
       </div>
 
@@ -41,16 +45,14 @@
 
         <a href="https://github.com/GStudiosX2" 
           class="flex flex-row gap-x-2 justify-center bg-zinc-700 hover:bg-zinc-800 px-6 py-2 rounded-xl grow-0 shrink-1 font-bold">
-          <img src="/assets/profile.png" 
-              alt="GStudiosX's Profile Picture" 
+          <img src="https://github.githubassets.com/favicons/favicon-dark.png" 
               class="w-6 h-6 rounded-full">
           Github
         </a>
 
         <a href="https://youtube.com/@gstudiosx8964" 
           class="flex flex-row gap-x-2 justify-center bg-zinc-700 hover:bg-zinc-800 px-6 py-2 rounded-xl grow-0 shrink-1 font-bold">
-          <img src="/assets/profile.png" 
-              alt="GStudiosX's Profile Picture" 
+          <img src="https://www.youtube.com/s/desktop/7ea5dfab/img/favicon_32x32.png" 
               class="w-6 h-6 rounded-full">
           YouTube
         </a>
