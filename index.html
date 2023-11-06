@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Some of my projects i have worked on.">
+    <meta name="description" content="Some of my projects I have worked on.">
     <meta name="keywords" content="GStudiosX, Portfolio, Software Developer, Skript Documentation">
     <meta name="author" content="GStudiosX">
     <meta property="og:title" content="GStudiosX" />
@@ -18,9 +18,24 @@
         /* Additional styles for clickable articles and hover effects */
         .clickable-article {
             position: relative;
-            overflow: hidden; /* Ensure that nothing spills out of the card */
-            cursor: pointer; /* Change cursor to indicate it's clickable */
-            transition: transform 0.3s ease, background-color 0.3s; /* Smooth transition for hover effects */
+            overflow: hidden; /* Prevent scrollbars */
+            cursor: pointer;
+            max-width: 640px; /* Limit the width of cards */
+            margin: auto; /* Center the card if it's not full width */
+        }
+        .clickable-article::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0);
+            transition: background-color 0.3s;
+            z-index: 1;
+        }
+        .clickable-article:hover::before {
+            background-color: rgba(0, 0, 0, 0.3); /* Darken card on hover */
         }
         .clickable-article a {
             position: absolute;
@@ -28,22 +43,21 @@
             height: 100%;
             top: 0;
             left: 0;
-            z-index: 10;
-            background: rgba(0, 0, 0, 0); /* Invisible overlay to make the div clickable */
-        }
-        .clickable-article:hover {
-            transform: scale(1.05); /* Slightly increase size on hover */
-            background-color: rgba(0, 0, 0, 0.3); /* Darken card on hover */
-            z-index: 20;
+            z-index: 2; /* Ensure link is above the pseudo-element */
         }
         .content-overlay {
-            position: relative; /* Ensure it's above the absolute position link */
-            z-index: 1;
+            position: relative;
+            z-index: 3; /* Ensure content is above the pseudo-element and link */
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Center content vertically */
-            align-items: center; /* Center content horizontally */
+            justify-content: center;
+            align-items: center;
             height: 100%;
+            padding: 1rem;
+            transition: transform 0.3s ease;
+        }
+        .clickable-article:hover .content-overlay {
+            transform: scale(1.05); /* Slightly increase size on hover */
         }
     </style>
 </head>
