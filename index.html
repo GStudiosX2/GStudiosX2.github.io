@@ -1,62 +1,88 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>GStudiosX</title>
+    <meta name="description" content="Some of my projects i have worked on.">
+    <meta name="keywords" content="GStudiosX, Portfolio, Software Developer, Skript Documentation">
+    <meta name="author" content="GStudiosX">
+    <meta property="og:title" content="GStudiosX" />
+    <meta property="og:description" content="A showcase of my projects." />
+    <meta property="og:image" content="/assets/profile.png" />
+    <meta property="og:url" content="https://gstudiosx2.github.io/" />
+    <meta property="og:type" content="website" />
+    <title>GStudiosX Portfolio</title>
     <link rel="icon" type="image/png" href="/assets/profile.png">
-
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
-    <div class="text-center flex flex-col md:justify-center items-center h-[100dvh] h-screen bg-zinc-950 text-white gap-4 py-6 px-4 overflow-y-auto">
-      <span class="text-2xl font-bold p-2.5 pt-0">GStudiosX</span>
-      <span class="text-2xl font-bold p-2.5 pt-0">My Public Projects!
-      <span class="text-sm">(Not In Any Order)</span></span>
+    <style>
+        /* Additional styles for clickable articles and hover effects */
+        .clickable-article {
+            position: relative;
+            overflow: hidden; /* Ensure that nothing spills out of the card */
+            cursor: pointer; /* Change cursor to indicate it's clickable */
+            transition: transform 0.3s ease, background-color 0.3s; /* Smooth transition for hover effects */
+        }
+        .clickable-article a {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0); /* Invisible overlay to make the div clickable */
+        }
+        .clickable-article:hover {
+            transform: scale(1.05); /* Slightly increase size on hover */
+            background-color: rgba(0, 0, 0, 0.3); /* Darken card on hover */
+            z-index: 20;
+        }
+        .content-overlay {
+            position: relative; /* Ensure it's above the absolute position link */
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300 flex flex-col justify-center min-h-screen">
+    <div class="container mx-auto px-4">
+        <header class="mb-12 text-center">
+            <h1 class="text-4xl font-bold text-white mb-2">GStudiosX</h1>
+            <p class="text-gray-400">Developer, Gamer</p>
+        </header>
 
-      <div class="flex flex-wrap justify-center gap-2 w-full md:w-1/2">
-        <a class="p-3 bg-zinc-700 hover:bg-zinc-900 flex flex-col justify-start w-full md:w-60 text-start max-h-[15rem]" href="https://gstudiosx2.github.io/MHDailyLimitChecker/">
-          <span class="text-xl font-bold">MHDailyLimitChecker</span>
-          <span class="flex flex-row md:flex-col">
-            MHDailyLimitChecker is a tool that lets you check how much time you can play on your Minehut server,
-            since Minehut recently-ish added a new daily time limit to their free servers.
-          </span>
-        </a>
+        <main>
+            <section id="projects" class="grid md:grid-cols-2 gap-8">
+                <article class="clickable-article bg-gray-800 shadow-lg rounded-lg p-6 text-center relative">
+                    <a href="https://gstudiosx2.github.io/MHDailyLimitChecker/" aria-label="MHDailyLimitChecker Project"></a>
+                    <div class="content-overlay">
+                        <h2 class="text-2xl font-bold text-white">MHDailyLimitChecker</h2>
+                        <p class="text-gray-300 mb-4">A tool that lets you check how much time you can play on your Minehut server.</p>
+                    </div>
+                </article>
+                
+                <article class="clickable-article bg-gray-800 shadow-lg rounded-lg p-6 text-center relative">
+                    <a href="https://skript.lol" aria-label="Skript.lol Project"></a>
+                    <div class="content-overlay">
+                        <img src="/LogoV2.png" alt="Skript.lol Logo" class="mx-auto mb-4 h-20 w-20 object-cover">
+                        <h2 class="text-2xl font-bold text-white">Skript.lol</h2>
+                        <p class="text-gray-300 mb-4">The best website for modern Skript development documentation.</p>
+                    </div>
+                </article>
+            </section>
 
-        <a class="p-3 bg-zinc-700 hover:bg-zinc-900 flex flex-col justify-start w-full md:w-60 text-start max-h-[15rem] overflow-y-hidden" href="https://skript.lol">
-          <span class="text-xl font-bold">Skript.lol</span>
-          <span class="flex flex-row md:flex-col">
-            Skript.lol - Skript Documentation
-            The best website for modern Skript development.
-            <img src="/LogoV2.png" class="md:w-full md:aspect-video md:max-h-[90px] w-[90px]" />
-          </span>
-        </a>
-      </div>
+            <section id="social-links" class="mt-12 flex justify-center space-x-6">
+                <a href="https://github.com/GStudiosX2" class="text-gray-300 hover:text-white">GitHub</a>
+                <a href="https://www.youtube.com/@gstudiosx8964" class="text-gray-300 hover:text-white">YouTube</a>
+            </section>
+        </main>
 
-      <div class="flex flex-col md:flex-row justify-center gap-2">
-        <a href="https://discordapp.com/users/389841806025687050" 
-          class="flex flex-row gap-x-2 justify-center bg-zinc-700 hover:bg-zinc-800 px-6 py-2 rounded-xl grow-0 shrink-1 font-bold">
-          <img src="/assets/profile.png" 
-              alt="GStudiosX's Profile Picture" 
-              class="w-6 h-6 rounded-full">
-          Discord
-        </a>
-
-        <a href="https://github.com/GStudiosX2" 
-          class="flex flex-row gap-x-2 justify-center bg-zinc-700 hover:bg-zinc-800 px-6 py-2 rounded-xl grow-0 shrink-1 font-bold">
-          <img src="https://github.githubassets.com/favicons/favicon-dark.png" 
-              class="w-6 h-6 rounded-full">
-          Github
-        </a>
-
-        <a href="https://youtube.com/@gstudiosx8964" 
-          class="flex flex-row gap-x-2 justify-center bg-zinc-700 hover:bg-zinc-800 px-6 py-2 rounded-xl grow-0 shrink-1 font-bold">
-          <img src="https://www.youtube.com/s/desktop/7ea5dfab/img/favicon_32x32.png" 
-              class="w-6 h-6 rounded-full">
-          YouTube
-        </a>
-      </div>
+        <footer class="mt-12 text-center">
+            <p>Contact me on <a href="https://discord.com/users/389841806025687050" class="text-blue-400 hover:underline">Discord</a></p>
+        </footer>
     </div>
-  </body>
+</body>
 </html>
